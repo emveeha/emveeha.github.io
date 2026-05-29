@@ -1,40 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <style>
-      body {
-        background-color: black;
-        color: white;
-        text-align: center;
-      }
-      h1 {
-        font-family: Google Sans Display, Roboto, Arial, sans-serif;
-        font-size: 4rem;
-        letter-spacing: 0;
-        font-weight: 500;
-      }
-
-      #logo {
-        border-radius: 50%;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        box-shadow: 0 0 8px black;
-        -webkit-box-shadow: 0 0 8px black;
-        -moz-box-shadow: 0 0 8px black;
-      }
-    </style>
     <meta charset="UTF-8">
-    <meta name="theme-color" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#121212">
     <title>Screen Off - Get it on Google Play</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+      /* Reset and base styles */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
+        color: #ffffff;
+        font-family: 'Google Sans Display', 'Roboto', 'Arial', sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        overflow: hidden;
+      }
+
+      /* Container for structure */
+      .card {
+        text-align: center;
+        max-width: 400px;
+        width: 100%;
+        animation: fadeIn 0.8s ease-out;
+      }
+
+      /* Logo styles with modern glow */
+      #logo {
+        width: 120px;
+        height: 120px;
+        border-radius: 24px; /* Modern squircle look instead of strict circle */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      #logo:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 255, 255, 0.1);
+      }
+
+      /* Typography */
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 500;
+        letter-spacing: -0.5px;
+        margin: 1.5rem 0 2.5rem 0;
+        background: linear-gradient(to bottom, #ffffff, #e0e0e0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Play Store Badge wrapper */
+      .badge-link {
+        display: inline-block;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+      }
+
+      .badge-link:hover {
+        transform: scale(1.03);
+      }
+
+      .badge-link:active {
+        transform: scale(0.98);
+      }
+
+      .badge-link img {
+        height: 60px; /* Fixed height for sharp rendering */
+        width: auto;
+      }
+
+      /* Smooth entry animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
   </head>
   <body>
-    <img src="ic_launcher-web.png" alt="Screen Off Logo" id="logo">
-    <br>
-    <h1>Screen Off</h1>
-    <br>
-    <a href="https://play.google.com/store/apps/details?id=nl.matthijsvh.screenoff&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">
-      <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png">
-    </a>
+    <div class="card">
+      <img src="ic_launcher-web.png" alt="Screen Off Logo" id="logo">
+      <h1>Screen Off</h1>
+      <a class="badge-link" href="https://play.google.com/store/apps/details?id=nl.matthijsvh.screenoff&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">
+        <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png">
+      </a>
+    </div>
   </body>
 </html>
+
